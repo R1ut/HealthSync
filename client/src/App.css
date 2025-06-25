@@ -1,6 +1,28 @@
 .App {
   text-align: center;
 }
+.circle-shape {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(18, 157, 204);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+
+}
+
+.circle-text {
+  color: navy;
+  font-size: 18px;
+  font-weight: bold;
+}
+a, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
 
 a:hover {
   text-decoration: underline;
