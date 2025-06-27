@@ -1,6 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
+import Interview from "./Components/Interview";
+import frontpage from './Components/Assets/frontpage.png'
+
+
 
 function App() {
   const navLinkStyle = {
@@ -14,7 +18,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App" style={{ fontFamily: "Arial", padding: "2rem", backgroundColor: "#f0f4f8", minHeight: "100vh" }}>
+      <div className="App" style={{ fontFamily: "Arial", padding: "2rem", backgroundColor: "white", minHeight: "100vh" }}>
         <header
           style={{
             backgroundColor: "#2b6cb0",
@@ -41,8 +45,9 @@ function App() {
           </nav>
         </header>
 
-        <main style={{ marginTop: "5rem" }}>
+        <main style={{ marginTop: "5rem", background: "white" }}>
           <Routes>
+            <Route path="/interview" element={<Interview />} />
             <Route path="/login" element={<Login />} />
             <Route path="/SignUp" element={<SignUp />} />
             <Route path="/" element={
@@ -53,10 +58,12 @@ function App() {
                 <p>- Alarm for medications including name and amount</p>
                 <p>- Notifications for hydration reminders</p>
                 <p>- Reminders for taking breaks throughout the day</p>
+                <img src= {frontpage} alt="" style={{ width: "720px", height: "420px", marginLeft: "42rem", marginTop: "-18rem" }} />
               </section>
             } />
           </Routes>
         </main>
+
 
         <footer style={{ marginTop: "3rem", textAlign: "center", fontSize: "0.9rem", color: "#666", paddingBottom: "3rem" }}>
           © 2025 Health Tracker. Be well!

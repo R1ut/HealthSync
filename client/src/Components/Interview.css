@@ -1,0 +1,58 @@
+.interview-container {
+  max-width: 500px;
+  margin: 5rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.underline{
+    width:61px;
+    height: 6px;
+    background: #2b6cb0;
+    border-radius: 9px;
+    justify-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 14rem;
+    margin-top: -1rem;
+}
+.interview-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2b6cb0;
+}
+
+.interview-form label {
+  display: block;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.interview-form input,
+.interview-form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.interview-form button {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #2b6cb0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  font-size: 19px;
+}
+
+.interview-form button:hover {
+  background-color: #1a4d8f;
+}
