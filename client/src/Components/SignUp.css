@@ -10,27 +10,34 @@
 
 }
 
-.header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 9px;
-    width: 100%;
-    margin-top: 30px;
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ ensures children are centered */
+  gap: 9px;
+  width: 100%;
+  margin-top: 30px;
 }
 
-.text{
-    color: #2b6cb0;
-    font-size: 48px;
-    font-weight: 700;
+.text {
+  color: #2b6cb0;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
 }
 
-.underline{
-    width:61px;
-    height: 6px;
-    background: #2b6cb0;
-    border-radius: 9px;
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 500px;             /* ✅ Set an explicit width */
+  margin: 200px auto 0 auto; /* ✅ Auto left and right centers it */
+  background: #fff;
+  padding-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+
 .inputs{
     margin-top: 55px;
     display: flex;

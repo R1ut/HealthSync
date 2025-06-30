@@ -3,6 +3,8 @@ import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import Interview from "./Components/Interview";
 import frontpage from './Components/Assets/frontpage.png'
+import logos from './Components/Assets/Mlogo.png'
+import './App.css';
 
 
 
@@ -34,8 +36,19 @@ function App() {
             zIndex: 1000
           }}
         >
-          <div style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
-            HealthSync
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <img
+              src={logos}
+              alt=""
+              style={{
+                height: "50px",
+                width: "40px",
+                objectFit: "contain"
+              }}
+            />
+            <div style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+              HealthSync
+            </div>
           </div>
 
           <nav>
@@ -51,14 +64,38 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/SignUp" element={<SignUp />} />
             <Route path="/" element={
-              <section style={{ marginBottom: "10rem" }}>
-                <h2>Find Out About Yourself</h2>
-                <p>See your BMI, Caloric needs, Hours of sleep, Amount of water and Heart rate zone.</p>
-                <h2>Set Reminders For Health Related Activities</h2>
-                <p>- Alarm for medications including name and amount</p>
-                <p>- Notifications for hydration reminders</p>
-                <p>- Reminders for taking breaks throughout the day</p>
-                <img src= {frontpage} alt="" style={{ width: "720px", height: "420px", marginLeft: "42rem", marginTop: "-18rem" }} />
+              <section style={{
+                marginBottom: "10rem",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between"
+              }}>
+                <div className = "box">
+                  <h2>Find Out About Yourself</h2>
+                  <p>See your BMI, Caloric needs, Hours of sleep, Amount of water and Heart rate zone.</p>
+                  <h2>Set Reminders For Health Related Activities</h2>
+                  <p>- Alarm for medications including name and amount</p>
+                  <p>- Notifications for hydration reminders</p>
+                  <p>- Reminders for taking breaks throughout the day</p>
+                </div>
+
+                <img
+                  src={frontpage}
+                  alt="HealthSync Preview"
+                  style={{ 
+                   
+                    width: "720px", 
+                    height: "420px", 
+                    margin: 0,
+                    padding: 0,
+                    display: "block",
+                    position: "relative",
+                    float: "right",
+                    marginTop: "-2rem",
+                    marginLeft: "0",
+                    marginRight: "-3rem" 
+                  }}
+                />
               </section>
             } />
           </Routes>
@@ -66,7 +103,7 @@ function App() {
 
 
         <footer style={{ marginTop: "3rem", textAlign: "center", fontSize: "0.9rem", color: "#666", paddingBottom: "3rem" }}>
-          © 2025 Health Tracker. Be well!
+          © 2025 HealthSync. Be well!
           <section>
             <div
               style={{
