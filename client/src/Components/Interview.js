@@ -1,62 +1,45 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import './Interview.css';
-import alarmSound from './Assets/med-alarm.mp3';
-
+import { useNavigate } from "react-router-dom";
+import { InterviewContext } from "./InterviewContext";
 
 export default function Interview() {
-  const [formData, setFormData] = useState({
+  const { setFormData } = useContext(InterviewContext);
+  const navigate = useNavigate();
+
+  const [localData, setLocalData] = useState({
     age: '',
     gender: '',
     height: '',
     weight: '',
     takesMedication: '',
     sleepHours: '',
-    hydrationReminder: false,
-    medReminder: false,
+    ActivityLevel: ''
   });
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
+    const { name, value } = e.target;
+    setLocalData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: value,
     }));
   };
 
-  const handleSumbit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form data submitted:", formData);
-
-    if (formData.hydrationReminder) {
-      Notification.requestPermission().then(permission => {
-        if (permission === "granted") {
-          setTimeout(() => {
-            new Notification("💧 Time to drink water!");
-          }, 5000); // Simulated reminder
-        }
-      });
-    }
-
-    if (formData.medReminder) {
-      const audio = new Audio(alarmSound);
-      setTimeout(() => {
-        audio.play();
-      }, 5000); // Simulated alarm
-    }
-
-    // Navigate somewhere if you want
-    // navigate("/dashboard");
+    setFormData(localData);
+    navigate("/Info");
   };
 
   return (
     <div className="interview-container">
       <h1>Health Interview</h1>
       <div className="underline"></div>
-      <form className="interview-form" onSubmit={handleSumbit}>
-        
+      <form className="interview-form" onSubmit={handleSubmit}>
+
         <label>
           Gender:
-          <select name="gender" value={formData.gender} onChange={handleChange} required>
+          <select name="gender" value={localData.gender} onChange={handleChange} required>
             <option value="">Choose</option>
             <option value="Female">Female</option>
             <option value="Male">Male</option>
@@ -65,27 +48,27 @@ export default function Interview() {
 
         <label>
           Age:
-          <input type="number" name="age" value={formData.age} onChange={handleChange} required />
+          <input type="number" name="age" value={localData.age} onChange={handleChange} required />
         </label>
 
         <label>
           Weight (kg):
-          <input type="number" name="weight" value={formData.weight} onChange={handleChange} required />
+          <input type="number" name="weight" value={localData.weight} onChange={handleChange} required />
         </label>
 
         <label>
           Height (cm):
-          <input type="number" name="height" value={formData.height} onChange={handleChange} required />
+          <input type="number" name="height" value={localData.height} onChange={handleChange} required />
         </label>
 
         <label>
           How many hours do you sleep? (hrs):
-          <input type="number" name="sleepHours" value={formData.sleepHours} onChange={handleChange} required />
+          <input type="number" name="sleepHours" value={localData.sleepHours} onChange={handleChange} required />
         </label>
 
         <label>
           Do you take medication?
-          <select name="takesMedication" value={formData.takesMedication} onChange={handleChange} required>
+          <select name="takesMedication" value={localData.takesMedication} onChange={handleChange} required>
             <option value="">Choose</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
@@ -93,13 +76,15 @@ export default function Interview() {
         </label>
 
         <label>
-          <input type="checkbox" name="hydrationReminder" checked={formData.hydrationReminder} onChange={handleChange} />
-          Enable hydration reminders
-        </label>
-
-        <label>
-          <input type="checkbox" name="medReminder" checked={formData.medReminder} onChange={handleChange} />
-          Enable medication alarms
+          Activity Level:
+          <select name="ActivityLevel" value={localData.ActivityLevel} onChange={handleChange} required>
+            <option value="">Choose</option>
+            <option value="Sedentary">Sedentary: Little to no excerise</option>
+            <option value="Light">Light: 1-3 tiems of excerise per week</option>
+            <option value="Moderate">Moderate: 4-5 times of excerise per week</option>
+            <option value="VeryActive">Active: Intense or daily excerise 6-7/week</option>
+            <option value="Intense">Very Physical Job or Daily Sports</option>
+          </select>
         </label>
 
         <button type="submit" className="submit">Submit</button>
@@ -107,4 +92,3 @@ export default function Interview() {
     </div>
   );
 }
-

@@ -1,0 +1,57 @@
+.dashboard {
+  height: 100vh;
+  width: 220px;
+  background-color: #2b6cb0; 
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-left: 1.5rem;
+  padding-top: 5rem;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+  color: white;
+  font-weight: 500;
+}
+
+.titletext h2 {
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-size: 1.4rem;
+}
+
+.sidetext p {
+  margin: 0.8rem 0;
+  cursor: pointer;
+  color: #f1f1f1;
+}
+
+.sidetext p:hover {
+  color: #ffef96;
+}
+
+.infostats,
+.calculated {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  height: auto;
+  min-height: 200px;
+  width: 260px;
+  background-color: #f7fafc; /* Soft white-blue */
+  margin-bottom: 2rem;
+}
+
+.infostats h2,
+.calculated h2 {
+  margin-bottom: 1rem;
+  color: #2b6cb0;
+  font-size: 1.3rem;
+}
+
+.infostats p,
+.calculated p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
