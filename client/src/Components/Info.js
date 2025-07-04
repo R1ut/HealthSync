@@ -39,9 +39,10 @@ export default function Info() {
           <h2>Dashboard</h2>
         </div>
         <div className="sidetext">
-          <p>- Notifications</p>
+          <p onClick={() => navigate("/notifications")}>- Notifications</p>
           <p>- Info</p>
           <p onClick={() => navigate("/UserPFP")}>- User Profile</p>
+          <p onClick={() => navigate("/history")}>- Patient History</p>
           <p>- Settings</p>
         </div>
       </div>

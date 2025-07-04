@@ -5,15 +5,18 @@ import Interview from "./Components/Interview";
 import Info from "./Components/Info";
 import UserPFP from "./Components/UserPFP";
 import { InterviewProvider } from './Components/InterviewContext';
-
+import ScrollToTop from "./Components/TopScroller";
 import frontpage from './Components/Assets/frontpage.png';
 import logos from './Components/Assets/Mlogo.png';
+import Notifications from "./Components/Notifications";
+import PatHistory from "./Components/PatHistory";
 import './App.css';
 
 function App() {
   return (
     <InterviewProvider>
       <Router>
+        <ScrollToTop />
         <div
           className="App"
           style={{
@@ -63,6 +66,8 @@ function App() {
               <Route path="/SignUp" element={<SignUp />} />
               <Route path="/Info" element={<Info />} />
               <Route path="/UserPFP" element={<UserPFP />} />
+              <Route path="/notifications" element={<Notifications />} />
+              <Route path="/history" element={<PatHistory />} />
               <Route
                 path="/"
                 element={

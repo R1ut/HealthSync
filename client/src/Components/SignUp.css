@@ -13,7 +13,7 @@
 .header {
   display: flex;
   flex-direction: column;
-  align-items: center; /* ✅ ensures children are centered */
+  align-items: center;
   gap: 9px;
   width: 100%;
   margin-top: 30px;
@@ -29,8 +29,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 500px;             /* ✅ Set an explicit width */
-  margin: 200px auto 0 auto; /* ✅ Auto left and right centers it */
+  width: 500px;            
+  margin: 200px auto 0 auto; 
   background: #fff;
   padding-bottom: 30px;
   border-radius: 12px;
