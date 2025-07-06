@@ -43,7 +43,7 @@ export default function Info() {
           <p>- Info</p>
           <p onClick={() => navigate("/UserPFP")}>- User Profile</p>
           <p onClick={() => navigate("/history")}>- Patient History</p>
-          <p>- Settings</p>
+          <p onClick={() => navigate("/settings")}>- Settings</p>
         </div>
       </div>
 

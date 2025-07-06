@@ -10,6 +10,7 @@ import frontpage from './Components/Assets/frontpage.png';
 import logos from './Components/Assets/Mlogo.png';
 import Notifications from "./Components/Notifications";
 import PatHistory from "./Components/PatHistory";
+import Settings from "./Components/Settings";
 import './App.css';
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
               <Route path="/UserPFP" element={<UserPFP />} />
               <Route path="/notifications" element={<Notifications />} />
               <Route path="/history" element={<PatHistory />} />
+              <Route path="/settings" element={<Settings />} />
               <Route
                 path="/"
                 element={

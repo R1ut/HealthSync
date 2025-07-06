@@ -1,0 +1,14 @@
+.Buttons {
+    border-radius: 20%;
+    background-color: #2b6cb0;
+    border-color: azure;
+    color: white;
+    height: 40px;
+    box-shadow: inset;
+}
+
+.Buttons:hover {
+    background-color: #0a4d95;
+
+}
+

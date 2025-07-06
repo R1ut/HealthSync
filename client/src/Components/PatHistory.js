@@ -34,7 +34,7 @@ export default function PatHistory() {
           <p onClick={() => navigate("/info")}>- Info</p>
           <p onClick={() => navigate("/UserPFP")}>- User Profile</p>
           <p onClick={() => navigate("/history")}>- Patient History</p>
-          <p>- Settings</p>
+          <p onClick={() => navigate("/settings")}>- Settings</p>
         </div>
       </div>
 

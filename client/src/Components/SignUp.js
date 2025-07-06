@@ -5,6 +5,13 @@ import password_icon from './Assets/password.png'
 import name_icon from './Assets/Name.png'
 import { useNavigate } from "react-router-dom";
 
+export default function permission()
+{
+  reuturn(
+    <div className="PerBox"
+  )
+
+}
 export default function SignUp() 
 
 {
