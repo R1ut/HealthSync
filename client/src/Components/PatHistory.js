@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './PatHistory.css'
 
 export default function PatHistory() {
   const navigate = useNavigate();
@@ -47,10 +48,11 @@ export default function PatHistory() {
       >
         <h1>Upload Your Report</h1>
 
-        <input type="file" accept="image/*" onChange={handleFileChange} />
+        
+        <input className='file' type="file" accept="" onChange={handleFileChange} />
 
         {file && (
-          <div style={{ marginTop: "1rem" }}>
+          <div className='fileupload' style={{ marginTop: "1rem" }}>
             <p><strong>File name:</strong> {file.name}</p>
             <p><strong>Size:</strong> {(file.size / 1024).toFixed(2)} KB</p>
             <p><strong>Type:</strong> {file.type}</p>
@@ -72,6 +74,9 @@ export default function PatHistory() {
             </div>
           </div>
         )}
+        <div style={{ marginLeft: "400px", marginTop: "-630px" }}>
+          <h1>whats good</h1>
+        </div>
       </div>
     </div>
   );

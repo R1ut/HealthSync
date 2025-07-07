@@ -122,12 +122,20 @@
     margin-right: 10px;
 }
 
+.Yes:hover {
+    background-color: #0954a3;
+}
+
 .No {
     height: 40px;
     width: 50px;
     background-color: rgba(101, 100, 100, 0.843);
     color: white;
     border-radius: 20%;
+}
+
+.No:hover {
+    background-color: rgba(73, 72, 72, 0.843);
 }
 
 .overlay {
@@ -147,4 +155,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.X {
+    background-color: white;
+    border-color: white;
+    box-shadow: transparent;
+    margin-left: 10px;
+
+
 }

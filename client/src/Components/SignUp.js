@@ -12,7 +12,7 @@ export default function SignUp() {
 
   function handleSubmitClick() {
     setPermission(true); 
-    setPendingNavigation(true); //  Set flag to allow nav after permission
+    setPendingNavigation(true);
   }
 
   function handlePermissionResponse(response) {
@@ -56,7 +56,7 @@ export default function SignUp() {
           <div className="PerBox">
             <div className='together'>
               <h2>Permission</h2>
-              <button onClick={()=> handlePermissionResponse('yes')}>X</button>
+              <button className='X' onClick={()=> handlePermissionResponse('yes')}>X</button>
             </div>
             <p>
               Do you give permission to have your data and medical reports entered by you to stay on this website? Your data will be kept private and will not be shared with anyone. Do you agree?
@@ -69,4 +69,3 @@ export default function SignUp() {
     </div>
   );
 }
-//Make that when hover on the x create a tag that shows that do it for later.
