@@ -1,4 +1,17 @@
 
-
-.fileupload {
+.uploadA {
+height: 100vh;
+  width: 350px;
+  background-color: #aeb0b1; 
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  position: fixed;
+  padding-left: 10rem;
+  padding-top: 5rem;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+  color: white;
+  font-weight: 500;
+  margin-left: 600px;
 }
