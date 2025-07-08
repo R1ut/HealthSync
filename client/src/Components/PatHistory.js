@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './PatHistory.css'
+import './ToolTip.js'
+import { Tooltip } from "./ToolTip.js";
 
 export default function PatHistory() {
   const navigate = useNavigate();
@@ -26,7 +28,6 @@ export default function PatHistory() {
     setStatus("uploading");
 
     setTimeout(() => {
-      // simulate a success
       setStatus("success");
     }, 1500);
   }
@@ -62,9 +63,12 @@ export default function PatHistory() {
         {permission && (
           <div className='overlay'>
             <div className="PerBox">
+              <button className='X' onClick={()=> handlePermissionResponse('yes')}>X</button>
+              <Tooltip>
+                <span class="material-symbols-outlined">highlight_keyboard_focus</span>
+              </Tooltip>
               <div className='together'>
                 <h2>Upload</h2>
-                <button className='X' onClick={()=> handlePermissionResponse('yes')}>X</button>
               </div>
               {file && (
                 <div className='fileupload' style={{ marginTop: "1rem" }}>
@@ -92,12 +96,13 @@ export default function PatHistory() {
             </div>
             </div>
         )}
-        <div style={{marginLeft: "800px", marginTop: "-95px"}}>
+
+      </div>
+      <div style={{marginLeft: "800px", marginTop: "-95px"}}>
           <div className="uploadA">
             <h1 style={{alignContent: "center", alignItems: "center"}}>Upload Bay</h1>
           </div>
         </div>
-      </div>
     </div>
   );
 }

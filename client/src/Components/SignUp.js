@@ -4,6 +4,8 @@ import email_icon from './Assets/email.png';
 import password_icon from './Assets/password.png';
 import name_icon from './Assets/Name.png';
 import { useNavigate } from "react-router-dom";
+import { Tooltip } from "./ToolTip.js";
+
 
 export default function SignUp() {
   const [permission, setPermission] = useState(false);
@@ -54,9 +56,16 @@ export default function SignUp() {
       {permission && (
         <div className='overlay'>
           <div className="PerBox">
+            <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", position: "relative" }}>
+              <button className="X" onClick={() => handlePermissionResponse('yes')}>X</button>
+              <Tooltip text="Do this later">
+                <span className="material-symbols-outlined" style={{ marginLeft: "0.5rem", cursor: "pointer" }}>
+                  highlight_keyboard_focus
+                </span>
+              </Tooltip>
+            </div>
             <div className='together'>
               <h2>Permission</h2>
-              <button className='X' onClick={()=> handlePermissionResponse('yes')}>X</button>
             </div>
             <p>
               Do you give permission to have your data and medical reports entered by you to stay on this website? Your data will be kept private and will not be shared with anyone. Do you agree?
@@ -69,3 +78,4 @@ export default function SignUp() {
     </div>
   );
 }
+
